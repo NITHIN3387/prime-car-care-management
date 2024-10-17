@@ -51,7 +51,7 @@ export const getServices: GetServicesType = async (
       values: [
         serviceName,
         cost,
-        <div className="space-x-4">
+        <div className="space-x-4" key={id}>
           <Button
             className="p-0"
             onClick={() => {

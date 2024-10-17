@@ -53,6 +53,7 @@ export const getCustomers: GetCustomerType = async (
         values: [
           <Button
             className="text-primary p-0"
+            key={id}
             // onClick={() => handleDeleteCustomer(id)}
             variant="ghost"
           >
@@ -60,7 +61,7 @@ export const getCustomers: GetCustomerType = async (
           </Button>,
           customerName,
           mobileNumber,
-          <div className="space-x-4 flex justify-center">
+          <div className="space-x-4 flex justify-center" key={id}>
             <Button
               className="p-0"
               onClick={() => {
@@ -78,7 +79,7 @@ export const getCustomers: GetCustomerType = async (
             >
               <DeleteIcon className="text-red-500" height={20} width={20} />
             </Button>
-          </div>,
+          </div>
         ],
       })
     );
