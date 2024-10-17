@@ -15,7 +15,7 @@ export const DialogBox = forwardRef<HTMLElement, DialogBoxProps>(
         )}
         id="blurBg"
         onClick={(e) =>
-          (e.target as any).id === "blurBg" ? setOpen(false) : null
+          (e.target as HTMLElement).id === "blurBg" ? setOpen(false) : null
         }
       >
         <article

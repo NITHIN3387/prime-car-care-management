@@ -10,7 +10,7 @@ export type FormActionType = (formData: FormData) => Promise<void>;
 
 export type OnSubmitType = (
   formData: FormData,
-  ...restParams: any[]
+  ...restParams: unknown[]
 ) => Promise<StateType | undefined>;
 
 export type UseFormStateType = (

@@ -12,7 +12,7 @@ import { toast } from "sonner";
 
 const UserContext = createContext<UserType | null>(null);
 
-export const userGetUser = () => useContext(UserContext);
+export const UserGetUser = () => useContext(UserContext);
 
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<UserType | null>(null);

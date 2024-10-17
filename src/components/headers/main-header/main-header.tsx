@@ -3,11 +3,11 @@
 import { MenuIcon, ProfileIcon } from "@/assets/icons";
 import { Button } from "@/components/ui/button";
 import { useNavbarToggle } from "@/contexts/main-navbar-context";
-import { userGetUser } from "@/contexts/user-context";
+import { UserGetUser } from "@/contexts/user-context";
 
 export const MainHeader = () => {
   const { setToggle } = useNavbarToggle();
-  const user = userGetUser();
+  const user = UserGetUser();
 
   return (
     <header className="sm:p-5 flex sm:justify-end justify-between items-center h-16">

@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { userGetUser } from "@/contexts/user-context";
+import { UserGetUser } from "@/contexts/user-context";
 import clsx from "clsx";
 import { Loading } from "./loading";
 
 export const Loader = () => {
-  const user = userGetUser();
+  const user = UserGetUser();
 
   return (
     <div

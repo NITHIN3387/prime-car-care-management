@@ -14,7 +14,7 @@ import { SortIcon } from "@/assets/icons";
 import { Loading } from "@/components/loaders/loading";
 
 export const Table = forwardRef<HTMLTableElement, TableProps>(
-  ({ children, className, search, tableData, ...props }, ref) => {
+  ({ className, search, tableData, ...props }, ref) => {
     const [data, setData] = useState<TableDataType>(tableData);
     const [sort, setSort] = useState<SortType>({ label: -1, order: 0 });
 

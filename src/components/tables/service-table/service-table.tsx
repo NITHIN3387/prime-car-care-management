@@ -2,7 +2,7 @@
 
 import { Table, TableDataType } from "@/components/ui/table";
 import { ServiceTableHeader } from "./header";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { getServices } from "./service-table.utils";
 import {
   DefaultValuesType,

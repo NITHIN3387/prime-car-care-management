@@ -1,6 +1,7 @@
 import prisma from "@/config/prisma";
 import createSession from "@/lib/create-session";
 import deleteSession from "@/lib/delete-session";
+import { UserType } from "@/types";
 import { NextResponse } from "next/server";
 
 const users = prisma.users;
@@ -17,7 +18,7 @@ export const POST = async (request: Request) => {
         { status: 401 }
       );
 
-    delete (user as any).password;
+    delete (user as UserType).password;
 
     const token = createSession(user);
 

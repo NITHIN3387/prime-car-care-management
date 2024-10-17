@@ -2,6 +2,7 @@ export interface UserType {
   id: string;
   name: string;
   mobileNumber: string;
+  password?: string;
   role: string;
 }
 
