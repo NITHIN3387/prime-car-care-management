@@ -17,7 +17,7 @@ export const buttonVariants = cva(
           "",
         secondary:
           "",
-        ghost: "",
+        ghost: "bg-trasparent hover:bg-secondary-bg text-primary",
       },
       size: {
         default: "px-4 py-2",

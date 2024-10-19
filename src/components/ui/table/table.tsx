@@ -49,7 +49,7 @@ export const Table = forwardRef<HTMLTableElement, TableProps>(
                   <Th key={index} {...attributes}>
                     {sortBtn ? (
                       <Button
-                        className="p-0 transition-all duration-300 space-x-2"
+                        className="p-0 transition-all duration-300 space-x-2 text-white"
                         onClick={() =>
                           setSort((pre) => ({
                             label: index,

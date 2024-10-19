@@ -1,6 +1,5 @@
-import type { ReactNode } from "react"
+import type { HTMLAttributes } from "react"
 
-export interface MainPageProps {
-  children?: ReactNode
+export interface MainPageProps extends HTMLAttributes<HTMLElement> {
   title: string
 }

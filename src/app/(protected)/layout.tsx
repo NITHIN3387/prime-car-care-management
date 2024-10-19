@@ -16,7 +16,7 @@ export default function RootLayout({
           <MainNavbar />
           <section className="flex flex-col flex-1 overflow-hidden">
             <MainHeader />
-            <main className="flex-1 bg-secondary-bg overflow-y-scroll overflow-x-hidden rounded-xl p-6">
+            <main className="flex-1 bg-secondary-bg overflow-x-hidden rounded-xl p-6 flex flex-col">
               {children}
             </main>
           </section>

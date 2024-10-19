@@ -18,3 +18,10 @@ export interface CustomerType {
   mobileNumber: string;
 }
 
+export interface BookingType {
+  id: string;
+  model: string;
+  carNumber: string;
+  ownedBy: string;
+  services: string[];
+}

@@ -3,6 +3,23 @@ import { NextResponse } from "next/server";
 
 const customers = prisma.customers;
 
+export const GET = async (
+  request: Request,
+  { params }: { params: { id: string } }
+) => {
+  try {
+    const customer = await customers.findUnique({ where: { id: params.id } });
+
+    return NextResponse.json({ customer }, { status: 200 });
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
+  }
+};
+
 export const PUT = async (
   request: Request,
   { params }: { params: { id: string } }
