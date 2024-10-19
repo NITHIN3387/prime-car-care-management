@@ -1,4 +1,4 @@
-import type { BookingType, CustomerType } from "@/types";
+import type { BookingType } from "@/types";
 import type { Dispatch, SetStateAction } from "react";
 
 export interface BookingInfoProps {
