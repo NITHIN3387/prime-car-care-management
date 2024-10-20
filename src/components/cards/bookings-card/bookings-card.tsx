@@ -13,22 +13,28 @@ import type { BookingsCardProps } from "./bookings-card.types";
 import { useEffect, useState } from "react";
 import { CustomerType } from "@/types";
 import { BookingInfo } from "@/components/dialog-boxes/booking-info";
+import {
+  fetchOwnerDetails,
+  handleBookingComplete,
+} from "./bookings-card.utils";
 
 export const BookingsCard = (props: BookingsCardProps) => {
-  const { id, model, carNumber, ownedBy, services, info = false } = props;
+  const {
+    id,
+    model,
+    carNumber,
+    ownedBy,
+    services,
+    info = false,
+    fetchBooking,
+    payment = false,
+  } = props;
 
   const [owner, setOwner] = useState<CustomerType>();
   const [showInfo, setShowInfo] = useState<boolean>(false);
 
   useEffect(() => {
-    const featchOwnerDetails = async () => {
-      const data = await fetch(`/api/customers/${ownedBy}`);
-      const { customer } = await data.json();
-
-      setOwner(customer);
-    };
-
-    featchOwnerDetails();
+    fetchOwnerDetails(ownedBy, setOwner);
   }, []);
 
   return (
@@ -73,15 +79,30 @@ export const BookingsCard = (props: BookingsCardProps) => {
             </div>
           ) : null}
         </CardBody>
-        <CardFooter>
-          <Button>Mark as Done</Button>
+        <CardFooter className="space-x-4">
+          {payment ? (
+            <>
+              <Button onClick={() => handleBookingComplete(id, fetchBooking)}>
+                ₹ Cash
+              </Button>
+              <Button onClick={() => handleBookingComplete(id, fetchBooking)}>
+                UPI {">>"}
+              </Button>
+            </>
+          ) : (
+            <Button onClick={() => handleBookingComplete(id, fetchBooking)}>
+              Mark as Done
+            </Button>
+          )}
         </CardFooter>
       </Card>
       {showInfo ? (
         <BookingInfo
           booking={{ id, model, carNumber, ownedBy, services }}
+          fetchBooking={fetchBooking}
           open={showInfo}
           setOpen={setShowInfo}
+          payment={payment}
         />
       ) : null}
     </>

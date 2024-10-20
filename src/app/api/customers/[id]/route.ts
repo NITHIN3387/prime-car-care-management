@@ -8,7 +8,7 @@ export const GET = async (
   { params }: { params: { id: string } }
 ) => {
   try {
-    const customer = await customers.findUnique({ where: { id: params.id } });
+    const customer = await customers.findUnique({ where: { id: params.id } });    
 
     return NextResponse.json({ customer }, { status: 200 });
   } catch (error) {

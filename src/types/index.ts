@@ -24,4 +24,7 @@ export interface BookingType {
   carNumber: string;
   ownedBy: string;
   services: string[];
+  bookingStatus: string;
+  paymentMode: string;
+  amount: number;
 }

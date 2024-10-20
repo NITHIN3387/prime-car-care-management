@@ -16,16 +16,19 @@ model Users {
 }
 
 model Bookings {
-  id        String     @id @default(auto()) @map("_id") @db.ObjectId
-  model     String
-  carNumber String     @unique
-  owner     Customers  @relation(fields: [ownedBy], references: [id])
-  ownedBy   String     @db.ObjectId
-  services  String[]
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  model         String
+  carNumber     String    @unique
+  owner         Customers @relation(fields: [ownedBy], references: [id])
+  ownedBy       String    @db.ObjectId
+  services      String[]
+  bookingStatus String
+  paymentMode   String
+  amount        Int
 }
 
 model Services {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
   serviceName String
   cost        Int
 }

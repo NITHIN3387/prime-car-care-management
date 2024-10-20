@@ -5,12 +5,12 @@ const bookings = prisma.bookings;
 
 export const GET = async () => {
   try {
-    const booking = await bookings.findMany({
-      where: { bookingStatus: "pending" },
+    const payments = await bookings.findMany({
+      where: { bookingStatus: "done", amount: 0 },
       include: { owner: true },
     });
 
-    return NextResponse.json({ booking }, { status: 200 });
+    return NextResponse.json({ payments }, { status: 200 });
   } catch (error) {
     console.log(error);
     return NextResponse.json(
